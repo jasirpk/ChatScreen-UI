@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterprj/main.dart';
-import 'package:flutterprj/screen2.dart';
+import 'package:flutterprj/chatscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -70,11 +70,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30)),
                       hintText: 'Username'),
                   validator: (value) {
-                    // if (_isdataMatched) {
-                    //   return null;
-                    // } else {
-                    //   return 'Error';
-                    // }
                     if (value == null || value.isEmpty) {
                       return 'Username is Empty';
                     } else {
@@ -94,11 +89,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30)),
                       hintText: 'Password'),
                   validator: (value) {
-                    //   if (_isdataMatched) {
-                    //     return null;
-                    //   } else {
-                    //     return 'Error';
-                    //   }
                     if (value == null || value.isEmpty) {
                       return 'Password is Empty';
                     } else {
@@ -106,19 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                   },
                 ),
-
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Visibility(
-                //       visible: !_isdataMatched,
-                //       child: Text(
-                //         'Username password does not match',
-                //         style: TextStyle(
-                //           color: Colors.red,
-                //         ),
-                //       ),
-                //     ),
                 TextButton(
                   onPressed: () {
                     //forgot password screen
@@ -127,7 +104,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     'Forgot Password?',
                   ),
                 ),
-
                 ElevatedButton.icon(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -150,7 +126,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-    //  );
   }
 
   void checkLogin(BuildContext ctx) async {
@@ -176,28 +151,6 @@ class _LoginScreenState extends State<LoginScreen> {
           content: Text(errorMessage),
         ),
       );
-      // showDialog(
-      //   context: ctx,
-      //   builder: (ctx1) {
-      //     return AlertDialog(
-      //       title: const Text('Error'),
-      //       content: const Text(errorMessage),
-      //       actions: [
-      //         TextButton(
-      //           onPressed: () {
-      //             Navigator.of(ctx1).pop();
-      //           },
-      //           child: const Text('Close'),
-      //         ),
-      //       ],
-      //     );
-      //   },
-      // );
-      // setState(
-      //   () {
-      //     isdataMatched = false;
-      //   },
-      // );
     }
   }
 }

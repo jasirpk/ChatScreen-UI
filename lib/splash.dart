@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterprj/main.dart';
-import 'package:flutterprj/screen1.dart';
-import 'package:flutterprj/screen2.dart';
+import 'package:flutterprj/login.dart';
+import 'package:flutterprj/chatscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {

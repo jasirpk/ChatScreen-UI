@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprj/screen1.dart';
-import 'package:flutterprj/screen3.dart';
+import 'package:flutterprj/login.dart';
+import 'package:flutterprj/personalscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Screenhome extends StatefulWidget {
@@ -35,29 +35,30 @@ class _ScreenhomeState extends State<Screenhome> {
           IconButton(
               onPressed: () {
                 showDialog(
-                    context: context,
-                    builder: (context) {
-                      Future.delayed(const Duration(seconds: 4), () {
-                        Navigator.of(context).pop(true);
-                      });
-                      return AlertDialog(
-                          content:
-                              const Text('Are you sure you want to Delete '),
-                          actions: [
-                            TextButton(
-                                onPressed: () {
-                                  signout(context);
-                                },
-                                child: const Text(
-                                  'DELETE',
-                                )),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text('CANCEL'))
-                          ]);
+                  context: context,
+                  builder: (context) {
+                    Future.delayed(const Duration(seconds: 4), () {
+                      Navigator.of(context).pop(true);
                     });
+                    return AlertDialog(
+                      content: const Text('Are you sure you want to Delete '),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              signout(context);
+                            },
+                            child: const Text(
+                              'DELETE',
+                            )),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('CANCEL'))
+                      ],
+                    );
+                  },
+                );
               },
               icon: const Icon(Icons.delete)),
           IconButton(
@@ -91,7 +92,6 @@ class _ScreenhomeState extends State<Screenhome> {
                   );
                 },
               );
-              // signout(context);
             },
             icon: const Icon(Icons.exit_to_app),
           ),
